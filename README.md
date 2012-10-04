@@ -1,17 +1,17 @@
-# Maven on JDK7 can't compile classes with UTF-8 characters in the name.
+# Maven on JDK 7 can't compile classes with UTF-8 characters in the name.
 
-Any tips about how to work around that would be greatly appreciated so I can build [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) on JDK7. (Its i18n support uses classes with such weird characters).
+Any tips about how to work around that would be greatly appreciated so I can build [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) on JDK 7. (Its i18n support uses classes with such weird characters).
 
 How to reproduce:
 
-## Works on both JDK6 and JDK7
+## Works on both JDK6 and JDK 7
 
 ```
 mkdir -p target/classes
 javac -encoding UTF-8 -d target/classes src/main/java/com/aslakhellesoy/Æøå.java
 ```
 
-## Works on JDK 6, but *not* on JDK7
+## Works on JDK 6, but *not* on JDK 7
 
 ```
 mvn -X clean compile
@@ -19,7 +19,7 @@ mvn -X clean compile
 
 See `mvn-jdk6.log` and `mvn-jdk7.log` to see why.
 
-It turns out that when running on JDK7, Maven tells javac to compile a file named `com/aslakhellesoy/Æøå.java`. It should be `com/aslakhellesoy/Æøå.java`.
+It turns out that when running on JDK 7, Maven tells javac to compile a file named `com/aslakhellesoy/Æøå.java`. It should be `com/aslakhellesoy/Æøå.java`.
 
 ## Versions:
 
