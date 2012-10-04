@@ -1,5 +1,9 @@
 # Maven on JDK 7 can't compile classes with UTF-8 characters in the name.
 
+*UPDATE*
+
+Found the solution at [Stack Overflow](http://stackoverflow.com/questions/3610013/file-listfiles-mangles-unicode-names-with-jdk-6-unicode-normalization-issues) and fixed it in [this commit](https://github.com/cucumber/cucumber-jvm/commit/1298878e8faabfe22305d086c1151898ac1d595c). Good work by David Kowis, Sébastien Le Callonnec on [#cucumber](http://irclogger.com/.cucumber/2012-10-04).
+
 Any tips about how to work around that would be greatly appreciated so I can build [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) on JDK 7. (Its i18n support uses classes with such weird characters).
 
 I have posted a ticket: [MCOMPILER-183](http://jira.codehaus.org/browse/MCOMPILER-183).
