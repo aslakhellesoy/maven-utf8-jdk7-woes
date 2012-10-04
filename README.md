@@ -2,6 +2,8 @@
 
 Any tips about how to work around that would be greatly appreciated so I can build [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) on JDK 7. (Its i18n support uses classes with such weird characters).
 
+I have posted a ticket: [MCOMPILER-183](http://jira.codehaus.org/browse/MCOMPILER-183).
+
 How to reproduce:
 
 ## Works on both JDK 6 and JDK 7
