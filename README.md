@@ -48,7 +48,27 @@ JDK 6 gives this:
 000000f
 ```
 
-Not the same!! Apparntly it's consistent on Linux, but not on OS X.
+Not the same!! Apparently it's consistent on Linux, but not on OS X.
+
+Another thing to try on both JDKs:
+
+```
+javac Ls.java && java Ls hex
+```
+
+JDK 7 gives this:
+
+```
+-0000000000000003c793c479e3375d1959e899f
+```
+
+JDK 6 gives this:
+
+```
+-000000000000000003c793c473c5ad1959e899f
+```
+
+It's clear that this has nothing to do with the terminal. It's something on the Filesystem level or System encoding level.
 
 ## Versions:
 
