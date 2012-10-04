@@ -25,6 +25,31 @@ It turns out that when running on JDK 7, Maven tells javac to compile a file nam
 
 I also tried `mvn -Dfile.encoding=UTF-8 clean compile`, but that did not help.
 
+## Digging deeper
+
+Try this on both JDK 6 and JDK 7:
+
+```
+javac Ls.java && java Ls | hexdump
+```
+
+JDK 7 gives this:
+
+```
+0000000 c3 86 c3 b8 61 cc 8a 2e 6a 61 76 61 3a 20 74 72
+0000010 75 65 0a                                       
+0000013
+```
+
+JDK 6 gives this:
+
+```
+0000000 ae bf 8c 2e 6a 61 76 61 3a 20 74 72 75 65 0a   
+000000f
+```
+
+Not the same!! Apparntly it's consistent on Linux, but not on OS X.
+
 ## Versions:
 
 JDK 7 `mvn --version`
