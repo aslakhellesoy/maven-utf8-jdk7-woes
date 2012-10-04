@@ -4,7 +4,7 @@ Any tips about how to work around that would be greatly appreciated so I can bui
 
 How to reproduce:
 
-## Works on both JDK6 and JDK 7
+## Works on both JDK 6 and JDK 7
 
 ```
 mkdir -p target/classes
