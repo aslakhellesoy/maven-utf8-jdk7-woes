@@ -23,6 +23,8 @@ See `mvn-jdk6.log` and `mvn-jdk7.log` to see why.
 
 It turns out that when running on JDK 7, Maven tells javac to compile a file named `com/aslakhellesoy/Æøå.java`. It should be `com/aslakhellesoy/Æøå.java`.
 
+I also tried `mvn -Dfile.encoding=UTF-8 clean compile`, but that did not help.
+
 ## Versions:
 
 JDK 7 `mvn --version`
